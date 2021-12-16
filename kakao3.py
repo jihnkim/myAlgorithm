@@ -1,4 +1,5 @@
 
+# 가사 검색
 # 완전 탐색
 queries = ["fro??", "????o", "fr???", "fro???", "pro?"]
 words = ["frodo", "front", "frost", "frozen", "frame", "kakao"]
