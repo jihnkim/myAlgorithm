@@ -1,4 +1,5 @@
 ### myAlgorithm
 ***
+python
 
-jihnkim`s algorithm playground
+*1 day 1 commit*
