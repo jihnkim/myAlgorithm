@@ -14,6 +14,13 @@ b 는 잠을자는동안 내려가는 m
 v 는 총 나무의 길이
 """
 
-a, b, v = map(int, input().split())
+def solution(a, b, v):
+    # 기존 나무의 길이 에서 내려가는 길이를 미리 빼준다
+    # 그러면 편하게 계산 가능 
+    d = (v - b) / (a - b)
+    if (v - b) % (a - b) != 0:
+        return int(d + 1)
+    return int(d)
 
-print(v // a )
+a, b, v = map(int, input().split())
+print(solution(a, b, v))
