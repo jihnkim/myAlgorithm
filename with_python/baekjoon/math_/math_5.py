@@ -14,3 +14,12 @@
 
 for _ in range(int(input())):
     h, w, n = map(int, input().split(" "))
+    f = (n % h)
+    no = n // h + 1
+    if not n % h:
+        # 2 2 4 or 2 2 2 인 경우를 생각해 보자
+        # 이럴 경우는 층은 2층(h)이며 호실은 단순 몫(n // h)으로 계산하여 예외 처리
+        no = n // h
+        f = h
+    print(f'{100 * f + no}')
+
