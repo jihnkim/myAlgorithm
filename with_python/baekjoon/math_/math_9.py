@@ -26,8 +26,14 @@ Fly me to the Alpha Centauri
 for _ in range(int(input())):
     x, y = map(int, input().split(" "))
     d = y - x
-    cnt = 0
     k = 1
+    t= 0 
+    cnt = 0
 
-    while d > k:
-        pass
+    while d > t:
+        cnt += 1
+        t += k
+        if cnt % 2 == 0:
+            k += 1
+
+    print(cnt)
