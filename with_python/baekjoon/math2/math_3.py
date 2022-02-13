@@ -13,17 +13,23 @@ def isPrime(n):
         return 0
     
     for i in range(2, n):
+
+
         if n % i == 0:
             return 0
     
     return 1
 
 N = int(input())
-lst = [i for i in range(1, N + 1) if isPrime(i)]
+lst = [i for i in range(1, N) if isPrime(i)]
 idx = 0
 
 while True:
     if N == 1:
+        break
+
+    if N == lst[idx]:
+        print(lst[idx])
         break
 
     if N % lst[idx] == 0:
