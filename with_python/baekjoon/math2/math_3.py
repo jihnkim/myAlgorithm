@@ -7,36 +7,13 @@
 N의 소인수분해 결과를 한 줄에 하나씩 오름차순으로 출력한다. N이 1인 경우 아무것도 출력하지 않는다.
 """
 
-# 시간초과 NlogN 으로 해보자
-def isPrime(n):
-    if n == 1:
-        return 0
-    
-    for i in range(2, n):
-
-
-        if n % i == 0:
-            return 0
-    
-    return 1
-
 N = int(input())
-lst = [i for i in range(1, N) if isPrime(i)]
-idx = 0
+div = 2
 
-while True:
-    if N == 1:
-        break
-
-    if N == lst[idx]:
-        print(lst[idx])
-        break
-
-    if N % lst[idx] == 0:
-        N = (N // lst[idx])
-        print(lst[idx])
+while div <= N:
+    if N % div == 0:
+        print(div)
+        N = N / div
         continue
-    
-    idx += 1
 
-
+    div += 1
