@@ -10,7 +10,9 @@ N의 소인수분해 결과를 한 줄에 하나씩 오름차순으로 출력한
 N = int(input())
 div = 2
 
+# main logic
 while div <= N:
+    # can factorize?
     if N % div == 0:
         print(div)
         N = N / div
