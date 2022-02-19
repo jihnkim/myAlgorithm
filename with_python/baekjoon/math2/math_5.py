@@ -32,11 +32,21 @@ def isPrime(n):
     
     return 1
 
-n = int(input())
-cnt = 0
+lst = list(range(2, 246912))
+p_lst = [i for i in lst if isPrime(i)]
 
-for i in range(n + 1, n*2 + 1):
-    if isPrime(i):
-        cnt += 1
+n = int(input())
+
+while n != 0:
+    cnt = 0
+
+    for i in p_lst:
+        if n < i <= n*2:
+            cnt += 1
+            
+        if i > n*2:
+            break
+
+    print(cnt)
+    n = int(input())
         
-print(cnt)
