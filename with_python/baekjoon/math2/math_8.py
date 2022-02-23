@@ -10,4 +10,22 @@
 출력
 직사각형의 네 번째 점의 좌표를 출력한다.
 """
+lstx = []
+lsty = []
+for _ in range(3):
+    x, y = map(int, input().split(' '))
+    lstx.append(x)
+    lsty.append(y)
+lstx.sort()
+lsty.sort()
+if lstx[1] == lstx[0]:
+    x = lstx[2]
+else:
+    x = lstx[0]
 
+if lsty[1] == lsty[0]:
+    y = lsty[2]
+else:
+    y = lsty[0]
+
+print(x, y)
