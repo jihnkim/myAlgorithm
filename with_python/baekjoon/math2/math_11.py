@@ -22,6 +22,7 @@ d = 0 and r1 == r2 inf
 """
 
 def CountWhereJaemyong(r1, r2, d):
+<<<<<<< HEAD
     # R = r1 + r2
     # if R > d:
     #     if (d == 0) and (r1 == r2):
@@ -35,10 +36,24 @@ def CountWhereJaemyong(r1, r2, d):
     #     return 1
     # return 0
     pass
+=======
+    R = r1 + r2
+    r = r1 - r2
+
+    if r1 - r2 < 0:
+        r = r2 - r1
+
+    if d == 0 and r1 == r2:
+        return -1
+    if r == d or R == d:
+        return 1
+    if r < d < R:
+        return 2
+    return 0
+>>>>>>> f7135bbbb1623657f67df2460093f900dee676ba
 
 for _ in range(int(input())):
     x1, y1, r1, x2, y2, r2 = map(int, input().split())
     d = ((x1 - x2)**2 + (y1 - y2)**2)**0.5
 
     print(CountWhereJaemyong(r1, r2, d))
-    
