@@ -34,6 +34,7 @@ def CountWhereJaemyong(r1, r2, d):
     # if R == d:
     #     return 1
     # return 0
+    pass
 
 for _ in range(int(input())):
     x1, y1, r1, x2, y2, r2 = map(int, input().split())
