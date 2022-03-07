@@ -22,4 +22,26 @@ N이 3보다 클 경우, 크기 N의 패턴은 공백으로 채워진 가운데�
 첫째 줄부터 N번째 줄까지 별을 출력한다.
 """
 
+from os import lstat
+
+
 n = int(input())
+
+def recursion(n):
+    if n == 1:
+        return ['*']
+
+    star = recursion(n // 3)
+    lst = []
+
+    for s in star:
+        lst.append(s * 3)
+    for s in star:
+        lst.append(s + ' ' * (n // 3) + s)
+    for s in star:
+        lst.append(s * 3)
+
+    return lst
+
+for v in recursion(n):
+    print(v)
