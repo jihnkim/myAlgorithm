@@ -18,8 +18,41 @@
 두 번째 줄부터 수행 과정을 출력한다. 두 번째 줄부터 K개의 줄에 걸쳐 두 정수 A B를 빈칸을 사이에 두고 출력하는데, 이는 A번째 탑의 가장 위에 있는 원판을 B번째 탑의 가장 위로 옮긴다는 뜻이다.
 
 """
+'''
+출력 결과
+
+1번 원반을 1에서 3로 이동
+2번 원반을 1에서 2로 이동
+1번 원반을 3에서 2로 이동
+3번 원반을 1에서 3로 이동
+1번 원반을 2에서 1로 이동
+2번 원반을 2에서 3로 이동
+1번 원반을 1에서 3로 이동
+총 이동 횟수: 7
+'''
+# 이해하는데 좀 걸렸다 ..
+# 한달 뒤에 한번 더 풀어보기
+
 n = int(input())
 
-def hanoi(n):
+def hanoi(n, start, destination, via):
+    if n == 1:
+        print(start, destination)
+        return 1
 
-    return
+    cnt = 0
+    # 첫 기둥의 밑판 제외 n-1 개의 원판 모두를 보조 기둥으로 이동(1 > 2 > 3)
+    cnt += hanoi(n - 1, start, via, destination)
+
+    # 맨 밑 가장 큰 원판을 도착 기둥으로 이동
+    cnt += 1
+    print(start, destination)
+
+    # 보조기둥에 두었던 n-1 개 원판을 도착 기둥으로 이동(2 > 3 > 1)
+    cnt += hanoi(n-1, via, destination, start)
+    
+    return cnt
+
+# (n, cnt) > (1, 1) (2, 3) (3, 7) (4, 15) .. 실제 점화식도 2^n - 1 꼴 임
+print(2**n - 1)
+hanoi(n, 1, 3, 2)
