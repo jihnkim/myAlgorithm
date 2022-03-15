@@ -21,3 +21,29 @@ N장의 카드에 써져 있는 숫자가 주어졌을 때, M을 넘지 않으�
 첫째 줄에 M을 넘지 않으면서 M에 최대한 가까운 카드 3장의 합을 출력한다.
 
 """
+n , m = map(int, input().split(' '))
+lst = list(map(int, input().split(' ')))
+
+res = 0
+
+for i in range(n):
+    for j in range(i+1, n):
+        for k in range(j+1, n):
+            if lst[i] + lst[j] + lst[k] > m:
+                continue
+            res = max(res, lst[i] + lst[j] + lst[k])
+
+print(res)
+
+# 좀 신기한 풀이 (조합 이용)
+# from itertools import combinations
+
+# card_num, target_num = map(int, input().split())
+# card_list = list(map(int, input().split())
+# biggest_num = 0
+
+# for cards in combinations(card_list, 3):
+#    temp_sum = sum(cards)
+#    if biggest_sum < temp_sum <= target_sum:
+#        biggest_sum = temp_sum
+# print(biggest_sum)
