@@ -24,4 +24,38 @@ N개의 수가 주어졌을 때, 네 가지 기본 통계값을 구하는 프로
 
 넷째 줄에는 범위를 출력한다.
 """
+import sys
 
+n = int(input())
+
+lst = []
+for _ in range(n):
+    lst.append(int(sys.stdin.readline()))
+
+# avg
+print(round(sum(lst) / n))
+
+# median
+lst.sort()
+print(lst[n // 2])
+
+# freq
+# unique_v = list(set(lst))
+# dic = dict()
+# for k in unique_v:
+#     pass
+# 막혀서 그냥 패키지 씀
+from collections import Counter
+
+cntlst = Counter(lst).most_common()
+
+if len(cntlst) > 1:
+    if cntlst[0][1] == cntlst[1][1]:
+        print(cntlst[1][0])
+    print(cntlst[0][0])
+else:
+    print(cntlst[0][0])
+
+
+# range
+print(lst[-1] - lst[0])

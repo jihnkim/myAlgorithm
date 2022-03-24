@@ -13,3 +13,15 @@
 출력
 첫째 줄에 자리수를 내림차순으로 정렬한 수를 출력한다.
 """
+
+n = int(input())
+
+lst = []
+
+for i in str(n):
+    lst.append(int(i))
+
+lst.sort(reverse=True)
+
+for v in lst:
+    print(v, end='')
