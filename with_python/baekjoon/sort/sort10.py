@@ -37,3 +37,5 @@ for v in lst:
     print(unique_lst.index(v), end=' ')
 
 # 2트
+
+impo
