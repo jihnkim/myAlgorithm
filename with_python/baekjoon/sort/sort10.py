@@ -37,5 +37,16 @@ for v in lst:
     print(unique_lst.index(v), end=' ')
 
 # 2트
+import sys
 
-impo
+n = int(sys.stdin.readline())
+
+lst = list(map(int, sys.stdin.readline().split(' ')))
+
+unique_lst = list(set(lst))
+unique_lst.sort()
+
+tmp = {unique_lst[idx] : idx for idx in range(len(unique_lst))}
+
+for v in lst:
+    print(tmp[v], end=' ')
