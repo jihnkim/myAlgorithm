@@ -57,6 +57,10 @@ def isPromising(x):
     for i in range(x):
         # 1. 같은 열에 다른 퀸이 있는 지 체크
         # 2. 대각선(왼쪽과 오른쪽 대각선)에 다른 퀸이 있는 지 체크
+        # (1, 1)에 퀸이 있을 때 (2, 2), (3, 3)이 대각선인데
+        # 1 - 2 == 1 - 2, 1 - 3 == 1 -3 이고
+        # (0, 2)일때도 마찬가지로
+        # abs(1 - 0) == abs(1 - 2) 임 
         if row[x] == row[i] or abs(row[x] - row[i]) == abs(x - i):
             return False
     
