@@ -20,3 +20,18 @@ ex) 1, 2 == 2, 1
 # start 라는 변수 추가
 # 추가 이유 : 탐색을 시작할 때 range를 start + 1로 재정의 함으로써
 # 중복(== 오름차순)을 제거
+
+n,m = list(map(int,input().split()))
+s = []
+def dfs(start):
+    if len(s)==m:
+        print(' '.join(map(str,s)))
+        return
+    
+    for i in range(start,n+1):
+        if i not in s:
+            s.append(i)
+            dfs(i+1)
+            s.pop()
+dfs(1)
+ 

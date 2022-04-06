@@ -20,6 +20,22 @@ back tracking?
 >> 재귀로 풀 수 있다.
 
 """
+# 새로운 풀이
+n,m = list(map(int,input().split()))
+s = []
+def dfs():
+    if len(s)==m:
+        print(' '.join(map(str,s)))
+        return
+    
+    for i in range(1,n+1):
+        if i not in s:
+            s.append(i)
+            dfs()
+            s.pop()
+
+###############################################
+
 def backtracing(depth, N, M):
     # depth는 원하는 해(값)이 아니면 그 다음 노드를 탐색(깊이 우선)
     # 탈출조건
