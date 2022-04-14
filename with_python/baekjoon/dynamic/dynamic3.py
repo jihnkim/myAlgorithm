@@ -18,3 +18,22 @@
 첫 번째 줄에 지원이가 만들 수 있는 길이가 N인 모든 2진 수열의 개수를 15746으로 나눈 나머지를 출력한다.
 
 """
+
+"""
+문제풀이 팁
+
+그냥 피보나치 수열임
+
+"""
+
+import sys
+input = sys.stdin.readline
+
+n = int(input())
+dp = [0] * 1000001
+dp[1] = 1
+dp[2] = 2
+
+for k in range(3,n+1):
+    dp[k] = (dp[k-1]+ dp[k-2])%15746
+print(dp[n])
