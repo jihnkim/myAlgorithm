@@ -169,7 +169,6 @@
            k+=1
     ```
 
-
 - 구현 시각화
 
     ![merge_sort](https://user-images.githubusercontent.com/86646616/160966927-9789bee4-4d85-4163-b9f8-9bcf684c9e42.gif)
