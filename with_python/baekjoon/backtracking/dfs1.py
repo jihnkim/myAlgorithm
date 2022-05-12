@@ -64,6 +64,7 @@ def dfs(i, arr):
       dfs(i+1, arr * data[i])
       mul += 1
     # 나누기
+    # 형변환을 하면 음수 나눗셈 이슈 안뜸?
     if div > 0:
       div -= 1
       dfs(i+1, int(arr / data[i]))
